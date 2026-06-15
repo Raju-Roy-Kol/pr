@@ -13,6 +13,12 @@ get_header();
   font-size: 28px!important ;
   line-height: 28px;
 }
+.sidebar-box ul li a {
+  color: #000;
+}
+.compound-price,.compound-save,.compound-footer{
+  background:#fff;
+}
 </style>
 
 
@@ -249,29 +255,33 @@ get_header();
             <span class="filter-label"> Filter By Research Categories </span>
 
             <div class="filter-buttons">
-              <button class="filter-btn active" data-target="all">All</button>
+             <button class="filter-btn active" data-target="all">
+        All
+    </button>
 
-              <button class="filter-btn" data-target="metabolic">
-                Metabolic Pathways
-              </button>
+                  <?php
 
-              <button class="filter-btn" data-target="gh">GH Signaling</button>
+                  $category_order = [
+                      'metabolic-pathways' => 'Metabolic Pathways',
+                      'gh-signaling'       => 'GH Signaling',
+                      'tissue-repair'      => 'Tissue Repair',
+                      'cellular-function'  => 'Cellular Function',
+                      'multi-pathway'      => 'Multi-Pathway',
+                      'reconstruction'     => 'Reconstruction'
+                  ];
 
-              <button class="filter-btn" data-target="tissue">
-                Tissue Repair
-              </button>
+                  foreach ($category_order as $slug => $title) :
 
-              <button class="filter-btn" data-target="cellular">
-                Cellular Function
-              </button>
+                  ?>
 
-              <button class="filter-btn" data-target="multi">
-                Multi-Pathway
-              </button>
+                      <button
+                          class="filter-btn"
+                          data-target="<?php echo esc_attr($slug); ?>"
+                      >
+                          <?php echo esc_html($title); ?>
+                      </button>
 
-              <button class="filter-btn" data-target="reconstruction">
-                Reconstruction
-              </button>
+                  <?php endforeach; ?>
             </div>
           </div>
 
@@ -292,38 +302,60 @@ get_header();
               <h3>CATEGORIES</h3>
 
               <ul>
-                <li class="category-title">Metabolic Pathways</li>
 
-                <li>Semaglutide</li>
-                <li>Tirzepatide</li>
-                <li>Retatrutide</li>
+                  <?php
 
-                <li class="category-title">GH Signaling</li>
+                  $category_order = [
+                      'metabolic-pathways' => 'Metabolic Pathways',
+                      'gh-signaling'       => 'GH Signaling',
+                      'tissue-repair'      => 'Tissue Repair',
+                      'cellular-function'  => 'Cellular Function',
+                      'multi-pathway'      => 'Multi-Pathway',
+                      'reconstruction'     => 'Reconstruction'
+                  ];
 
-                <li>Ipamorelin</li>
-                <li>Tesamorelin</li>
-                <li>CJC 1295 (with dac)</li>
-                <li>CJC 1295 (without dac)</li>
-                <li>Sermorelin</li>
+                  foreach ($category_order as $slug => $title) :
 
-                <li class="category-title">Tissue Repair</li>
+                      $category = get_term_by(
+                          'slug',
+                          $slug,
+                          'product_cat'
+                      );
 
-                <li>BPC-157</li>
-                <li>BPC-157/TB-500</li>
-                <li>GHK-CU</li>
+                      if (!$category) {
+                          continue;
+                      }
 
-                <li class="category-title">Cellular Function</li>
+                  ?>
 
-                <li>NAD+</li>
-                <li>MOTS-C</li>
+                      <li class="category-title">
+                          <a href="#<?php echo esc_attr($slug); ?>">
+                              <?php echo esc_html($title); ?>
+                          </a>
+                      </li>
 
-                <li class="category-title">Multi-Pathway</li>
+                      <?php
 
-                <li>GLOW</li>
+                      $products = wc_get_products([
+                          'status'   => 'publish',
+                          'limit'    => -1,
+                          'category' => [$slug]
+                      ]);
 
-                <li class="category-title">Reconstruction</li>
+                      foreach ($products as $product) :
 
-                <li>BAC</li>
+                      ?>
+
+                          <li>
+                              <a href="<?php echo get_permalink($product->get_id()); ?>">
+                                  <?php echo esc_html($product->get_name()); ?>
+                              </a>
+                          </li>
+
+                      <?php endforeach; ?>
+
+                  <?php endforeach; ?>
+
               </ul>
             </div>
           </aside>
@@ -331,473 +363,39 @@ get_header();
           <!-- Content -->
 
           <div class="research-content">
-            <!-- ===================================================
-                     METABOLIC
-                ==================================================== -->
+           
 
-            <section id="metabolic" class="research-group">
-              <h2>
-                Metabolic Pathways
-                <span>- 3 Results</span>
-              </h2>
+            <?php
 
-              <div class="product-slider metabolic-slider">
-                <!-- CARD 1 -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
+            render_product_slider(
+                'metabolic-pathways',
+                'Metabolic Pathways'
+            );
 
-                  <div class="compound-card-body">
-                    <h3>GLP - 1 (S)</h3>
+            render_product_slider(
+                'gh-signaling',
+                'GH Signaling'
+            );
 
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/GLP-1-S-5mg.png" alt="" />
-                    </div>
+            render_product_slider(
+                'tissue-repair',
+                'Tissue Repair'
+            );
 
-                    <div class="compound-note">
-                      For Research Use Only
-                      <br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
+            render_product_slider(
+                'cellular-function',
+                'Cellular Function'
+            );
+             render_product_slider(
+                'multi-pathway',
+                'Multi-Pathway'
+            );
+             render_product_slider(
+                'reconstruction',
+                'Reconstruction'
+            );
 
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$39.00</strong>
-                  </div>
-
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-
-                <!-- CARD 2 -->
-
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-
-                  <div class="compound-card-body">
-                    <h3>GLP - 1 (T)</h3>
-
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/GLP-1-T-5mg.png" alt="" />
-                    </div>
-
-                    <div class="compound-note">
-                      For Research Use Only
-                      <br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$39.00</strong>
-                  </div>
-
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-
-                <!-- CARD 3 -->
-
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-
-                  <div class="compound-card-body">
-                    <h3>GLP - 3 (R)</h3>
-
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/GLP-3-R.png" alt="" />
-                    </div>
-
-                    <div class="compound-note">
-                      For Research Use Only
-                      <br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$49.00</strong>
-                  </div>
-
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <!-- ===================================================
-                     GH SIGNALING
-                ==================================================== -->
-
-            <section id="gh" class="research-group">
-              <h2>
-                GH Signaling
-                <span>- 5 Results</span>
-              </h2>
-
-              <div class="product-slider gh-slider">
-                <!-- Repeat same card structure -->
-
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>IPAMORELIN</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Ipamorelin-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$24.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-
-                <!-- Tesamorelin -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>TESAMORELIN</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Tesamorelin-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$39.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-                <!-- CJC with dac -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>CJC 1295 (with dac)</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/CJC-1295-DAC-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$45.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-                <!-- CJC without dac -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>CJC 1295 (without dac)</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/CJC-1295-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$29.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-                <!-- Sermorelin -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>SERMORELIN</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Sermorelin-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$29.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <!-- ===================================================
-                     TISSUE REPAIR
-                ==================================================== -->
-
-            <section id="tissue" class="research-group">
-              <h2>
-                Tissue Repair
-                <span>- 3 Results</span>
-              </h2>
-
-              <div class="product-slider tissue-slider">
-                <!-- BPC-157 -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>BPC-157</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/BPC-157-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$19.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-                <!-- BPC-157/TB-500 -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>BPC-157/TB-500</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/BPC-157_TB500-5_5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$49.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-                <!-- GHK-CU -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>GHK-CU</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/GHK-CU-50mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$19.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <!-- ===================================================
-                     CELLULAR FUNCTION
-                ==================================================== -->
-
-            <section id="cellular" class="research-group">
-              <h2>
-                Cellular Function
-                <span>- 2 Results</span>
-              </h2>
-
-              <div class="product-slider cellular-slider">
-                <!-- NAD+ -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>NAD+</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/NAD+5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$24.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-                <!-- MOTS-C -->
-                <article class="compound-card">
-                  <div class="compound-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                  </div>
-                  <div class="compound-card-body">
-                    <h3>MOTS-C</h3>
-                    <div class="compound-image">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/MOTS-C-5mg.png" alt="" />
-                    </div>
-                    <div class="compound-note">
-                      For Research Use Only<br />
-                      Not for human or veterinary use
-                    </div>
-                  </div>
-                  <div class="compound-price">
-                    <span>Starting at</span>
-                    <strong>$65.00</strong>
-                  </div>
-                  <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                  <div class="compound-footer">
-                    <a href="#">LEARN MORE</a>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <!-- ===================================================
-                     LAST ROW
-                ==================================================== -->
-
-            <div class="bottom-categories">
-              <section id="multi" class="research-group">
-                <h2>
-                  Multi-Pathway
-                  <span>- 1 Result</span>
-                </h2>
-
-                <div class="product-sliderr multi-slider">
-                  <article class="compound-card">
-                    <div class="compound-card-header">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                    </div>
-                    <div class="compound-card-body">
-                      <h3>GLOW</h3>
-                      <div class="compound-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Glow-70mg.png" alt="" />
-                      </div>
-                      <div class="compound-note">
-                        For Research Use Only<br />
-                        Not for human or veterinary use
-                      </div>
-                    </div>
-                    <div class="compound-price">
-                      <span>Starting at</span>
-                      <strong>$99.00</strong>
-                    </div>
-                    <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                    <div class="compound-footer">
-                      <a href="#">LEARN MORE</a>
-                    </div>
-                  </article>
-                </div>
-              </section>
-
-              <section id="reconstruction" class="research-group">
-                <h2>
-                  Reconstruction
-                  <span>- 1 Result</span>
-                </h2>
-
-                <div class="reconstruction-slider">
-                  <!-- BAC -->
-                  <article class="compound-card">
-                    <div class="compound-card-header">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="" />
-                    </div>
-                    <div class="compound-card-body">
-                      <h3>BAC</h3>
-                      <div class="compound-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/BAC-10mg.png" alt="" />
-                      </div>
-                      <div class="compound-note">
-                        For Research Use Only<br />
-                        Not for human or veterinary use
-                      </div>
-                    </div>
-                    <div class="compound-price">
-                      <span>Starting at</span>
-                      <strong>$9.00</strong>
-                    </div>
-                    <div class="compound-save">ORDER MORE, SAVE MORE</div>
-                    <div class="compound-footer">
-                      <a href="#">LEARN MORE</a>
-                    </div>
-                  </article>
-                </div>
-              </section>
-            </div>
+          ?>
           </div>
         </div>
       </div>

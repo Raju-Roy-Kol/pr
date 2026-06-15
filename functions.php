@@ -71,3 +71,77 @@ function premier_theme_setup() {
 }
 
 add_action('after_setup_theme', 'premier_theme_setup');
+
+
+function render_product_slider($category_slug, $title) {
+
+    $products = wc_get_products([
+        'status'   => 'publish',
+        'limit'    => -1,
+        'category' => [$category_slug]
+    ]);
+
+    if (empty($products)) {
+        return;
+    }
+
+    ?>
+
+    <section id="<?php echo esc_attr($category_slug); ?>" class="research-group">
+
+        <h2>
+            <?php echo esc_html($title); ?>
+            <span>- <?php echo count($products); ?> Results</span>
+        </h2>
+
+        <div class="product-slider">
+
+            <?php foreach ($products as $product) : ?>
+
+                <article class="compound-card">
+
+                    <div class="compound-card-header">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
+                    </div>
+
+                    <div class="compound-card-body">
+
+                        <h3><?php echo $product->get_name(); ?></h3>
+
+                        <div class="compound-image">
+                            <?php echo $product->get_image('medium'); ?>
+                        </div>
+
+                        <div class="compound-note">
+                            For Research Use Only
+                            <br>
+                            Not for human or veterinary use
+                        </div>
+
+                    </div>
+
+                    <div class="compound-price">
+                        <span>Starting at</span>
+                        <strong><?php echo $product->get_price_html(); ?></strong>
+                    </div>
+
+                    <div class="compound-save">
+                        ORDER MORE, SAVE MORE
+                    </div>
+
+                    <div class="compound-footer">
+                        <a href="<?php echo get_permalink($product->get_id()); ?>">
+                            LEARN MORE
+                        </a>
+                    </div>
+
+                </article>
+
+            <?php endforeach; ?>
+
+        </div>
+
+    </section>
+
+    <?php
+}
