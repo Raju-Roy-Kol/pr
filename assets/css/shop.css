@@ -1,0 +1,2146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root {
+  --header-color: #122133;
+  --black-color:#000;
+  --button-bg-color:#3573C4;
+  --card-header-bg-color:#122133;
+  --shg-max-width: 1640px;
+  --shg-white: #ffffff;
+  --shg-border: #f7f7f7;
+      --shg-text: #081e58;
+}
+body{
+    font-family:'Roboto',sans-serif;
+    color:#12233f;
+}
+
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:100%;
+    max-width:1640px;
+    margin:0 auto;
+    padding:0 15px;
+    display:block;
+}
+
+/* ===================================
+   Announcement Bar
+=================================== */
+
+.announcement-bar{
+    background:#081c39;
+    color:#fff;
+    text-align:center;
+    padding:16px 20px;
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* ===================================
+   Header
+=================================== */
+
+.site-header{
+    background:#fff;
+}
+
+.header-wrapper{
+    height:124px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo img{
+    width:200px;
+}
+
+.desktop-nav ul{
+    display:flex;
+    gap:58px;
+}
+
+.desktop-nav a{
+    font-size:16px;
+    color:#111;
+}
+
+.header-icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-icons a{
+    width:24px;
+    height:24px;
+}
+
+.header-icons svg{
+    width:100%;
+    height:100%;
+    fill:#0b1d3c;
+}
+
+.hamburger{
+    display:none;
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+.hamburger span{
+    display:block;
+    width:28px;
+    height:3px;
+    background:#0b1d3c;
+    margin:5px 0;
+}
+
+/* ===================================
+   Hero
+=================================== */
+
+.hero-section{
+    background:url("../images/hero-index.jpg")
+    center center / cover no-repeat;
+
+    min-height:580px;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    width:100%;
+}
+
+.hero-left{
+    max-width:650px;
+}
+
+.hero-left h1{
+    font-family:'Lora',serif;
+    font-size:60px;
+    line-height:1.12;
+    font-weight:700;
+    margin-bottom:30px;
+    color:var(--header-color);
+}
+
+.hero-left p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:40px;
+    color:var(--black-color);
+}
+
+.primary-btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:344px;
+    height:58px;
+
+    border-radius:999px;
+
+    background:var(--button-bg-color);
+    color:#fff;
+
+    font-size:22px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    opacity:.9;
+}
+
+/* ===================================
+   Research Section
+=================================== */
+
+.research-section{
+    background:#f0f0f0;
+    padding:90px 20px;
+    text-align:center;
+}
+
+.research-section h2{
+    font-family:'Lora',serif;
+    font-size:60px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.research-section p{
+    max-width:1200px;
+    margin:auto;
+    font-size:20px;
+    line-height:1.6;
+}
+
+/* ===================================
+   Usage Section
+=================================== */
+
+.usage-section{
+    background:#fff;
+    padding:70px 0 90px;
+}
+
+.usage-card{
+    background:#081c39;
+    border-radius:12px;
+
+    padding:35px 40px;
+
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+}
+
+.usage-icon{
+    min-width:52px;
+    width:52px;
+    height:52px;
+
+    border:4px solid #fff;
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+    font-size:30px;
+    font-weight:700;
+}
+
+.usage-content{
+    color:#fff;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.usage-content strong{
+    font-weight:700;
+}
+
+/* ==================================================
+   MOST POPULAR RESEARCH COMPOUNDS
+================================================== */
+
+.popular-compounds-section{
+    background:#fff;
+    padding:50px 0 50px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-heading h2{
+    font-family:'Lora',serif;
+    font-size:60px;
+    line-height:1.15;
+    font-weight:700;
+    margin-bottom:18px;
+    color:var(--header-color);
+}
+
+.section-heading p{
+    font-size:20px;
+    line-height:1.6;
+    color:#333;
+}
+
+.compound-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:55px;
+    justify-content:center;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.compound-card{
+    background:#f3f3f3;
+    border:2px solid #bcc3cf;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.compound-card-header{
+    background:var(--card-header-bg-color);
+    height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.compound-card-header img{
+    width:210px;
+}
+
+.compound-card-body{
+    padding:18px;
+}
+
+.compound-card-body h3{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.compound-image{
+    border:2px solid #bcc3cf;
+    border-radius:25px;
+    overflow:hidden;
+}
+
+.compound-image img{
+    width:100%;
+}
+
+.compound-note{
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+    margin-top:10px;
+    line-height:1.4;
+}
+
+.compound-price{
+    border-top:2px solid #bcc3cf;
+    text-align:center;
+    padding:14px 20px;
+}
+
+.compound-price span{
+    display:block;
+    font-size:18px;
+    font-weight:700;
+}
+
+.compound-price strong{
+    display:block;
+    font-size:46px;
+    line-height:1;
+}
+
+.compound-save{
+    border-top:2px solid #bcc3cf;
+    text-align:center;
+    padding:20px;
+    font-size:18px;
+    font-weight:700;
+}
+
+.compound-footer{
+    padding:18px;
+}
+
+.compound-footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #081c39;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    gap: 10px;
+}
+
+/* ==================================================
+   WHY CHOOSE
+================================================== */
+
+.why-choose-section{
+    background:#ececec;
+    padding:90px 0 120px;
+}
+
+.why-top{
+    display:grid;
+    grid-template-columns:400px 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.why-logo img{
+    width:100%;
+    max-width:360px;
+}
+
+.why-content h2{
+    font-family:'Lora',serif;
+    font-size:60px;
+    line-height:1.15;
+    color:#10213d;
+    margin-bottom:24px;
+}
+
+.why-content p{
+    font-size:20px;
+    line-height:1.7;
+}
+
+.why-features{
+    margin-top:80px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+}
+
+.feature-card{
+    text-align:center;
+}
+
+.feature-icon{
+    width:95px;
+    height:95px;
+
+    margin:0 auto 28px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.feature-icon img{
+    width:95px;
+}
+
+.feature-card h3{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:12px;
+    line-height:1.4;
+}
+
+.feature-card p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+
+
+/* ==========================================================
+   SECTION 3 - RESEARCH CATEGORIES
+========================================================== */
+
+.research-categories-section{
+    padding:100px 0;
+    background:#f5f5f5;
+}
+
+.research-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.research-header h2{
+    font-family:'Lora',serif;
+    font-size:52px;
+    font-weight:700;
+    color:#12233f;
+    margin-bottom:12px;
+}
+
+.research-header p{
+    font-size:18px;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ==========================================================
+   FILTERS
+========================================================== */
+
+.research-filters{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:60px;
+}
+
+.research-filter-left{
+    flex:1;
+}
+
+.research-filter-right{
+    width:220px;
+}
+
+.filter-label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#111;
+}
+
+.filter-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.filter-btn{
+    min-width:145px;
+    height:42px;
+
+    border:1px solid #2e6ecb;
+    border-radius:8px;
+
+    background:#fff;
+    color:#12233f;
+
+    font-size:13px;
+    font-weight:500;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-btn:hover{
+    /* background:#12233f; */
+    /* color:#fff; */
+}
+
+.filter-btn.active{
+    background:#12233f;
+    color:#fff;
+}
+
+.product-filter{
+    width:100%;
+    height:42px;
+
+    border:1px solid #2e6ecb;
+    border-radius:25px;
+
+    padding:0 20px;
+
+    background:#fff;
+
+    appearance:none;
+    cursor:pointer;
+}
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.research-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:30px;
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.research-sidebar{
+    position:sticky;
+    top:20px;
+    height:max-content;
+}
+
+.sidebar-box{
+    border:1px solid #aeb7c6;
+    border-radius:16px;
+    padding:18px;
+    background:#f7f7f7;
+}
+
+.sidebar-box h3{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.sidebar-box ul{
+    list-style:none;
+}
+
+.sidebar-box li{
+    font-size:13px;
+    margin-bottom:8px;
+    color:#111;
+}
+
+.sidebar-box .category-title{
+    font-weight:700;
+    margin-top:12px;
+    cursor:pointer;
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.research-group{
+    margin-bottom:55px;
+}
+
+.research-group h2{
+    font-family: 'Roboto', sans-serif;
+    font-size:35px;
+    margin-bottom:18px;
+    color:#12233f;
+}
+
+.research-group h2 span{
+    font-weight:400;
+}
+
+/* ==========================================================
+   PRODUCT GRID
+========================================================== */
+
+.product-slider{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+/* Reuse Section 2 card styling */
+
+.compound-card{
+    background:#f7f7f7;
+    border:1px solid #b6becb;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.compound-card-header{
+    height:56px;
+    background:#081c39;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.compound-card-header img{
+    width:135px;
+}
+
+.compound-card-body{
+    padding:10px;
+}
+.product-slider .compound-card-body h3{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.compound-image{
+    border:1px solid #b6becb;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.compound-image img{
+    width:100%;
+    display:block;
+}
+
+/* .compound-note{
+    text-align:center;
+    font-size:10px;
+    margin-top:6px;
+    line-height:1.4;
+} */
+
+.compound-price{
+    border-top:1px solid #b6becb;
+    text-align:center;
+    padding:12px;
+    background:#fff;
+}
+
+.compound-price span{
+    display:block;
+    font-size:13px;
+}
+
+.compound-price strong{
+    display:block;
+    font-size:28px;
+    margin-top:3px;
+}
+
+.product-slider .compound-save{
+    border-top:1px solid #b6becb;
+    text-align:center;
+    padding:14px;
+    font-size:16px;
+    font-weight:700;
+    background:#fff;
+}
+
+.compound-footer{
+    padding:12px;
+    background:#fff;
+}
+
+.compound-footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #081c39;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: normal;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================
+   BOTTOM CATEGORIES
+========================================================== */
+
+.bottom-categories{
+    display:grid;
+    grid-template-columns:296px 296px;
+    gap:20px;
+}
+
+/* ==========================================================
+   SLICK OVERRIDES
+========================================================== */
+
+.slick-track{
+    display:flex !important;
+}
+
+.slick-slide{
+    height:inherit !important;
+}
+
+.slick-slide > div{
+    /* height:100%; */
+}
+
+/* arrows */
+
+.slick-prev-custom,
+.slick-next-custom{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:30px;
+    height:30px;
+
+    border:none;
+    background:none;
+
+    font-size:32px;
+    color:#12233f;
+
+    cursor:pointer;
+
+    z-index:20;
+}
+
+.slick-prev-custom{
+    left:-18px;
+}
+
+.slick-next-custom{
+    right:-18px;
+}
+/* ==========================================
+   RESEARCH CTA
+========================================== */
+.mt-40{
+    margin-top:40px;
+}
+.research-cta{
+    background:url("../images/buy-more-save-more.jpg")
+    center/cover no-repeat;
+    padding:80px 0;
+}
+
+.research-cta-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+}
+
+.research-cta h2{
+    font-family:'Lora',serif;
+    font-size:58px;
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.research-cta p{
+    font-size:20px;
+    line-height:1.5;
+}
+
+.research-save ul{
+    margin-top:35px;
+}
+
+.research-save li{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* ==========================================
+   TRANSPARENCY
+========================================== */
+
+.transparency-section{
+    background:#f3f3f3;
+    position:relative;
+    padding:90px 0 100px;
+}
+
+.transparency-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.transparency-content h2{
+    font-family:'Lora',serif;
+    font-size:58px;
+    margin-bottom:30px;
+}
+
+.transparency-content p{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:30px;
+}
+
+.transparency-logo img{
+    width:100%;
+}
+
+/* ==========================================
+   NEWSLETTER
+========================================== */
+
+.newsletter-card{
+
+    position:relative;
+
+    
+   
+
+   
+    width:100%;
+    max-width:100%;
+
+    background:#f7f7f7;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.12);
+    margin:0 auto;
+    margin-top:80px;
+}
+
+.newsletter-card h2{
+    font-family:'Lora',serif;
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.newsletter-card p{
+    margin-bottom:30px;
+}
+
+.newsletter-form{
+
+    display:flex;
+    justify-content:center;
+    position: relative;
+    width: 100%;
+    max-width: 565px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form input{
+
+    width:100%;
+    max-width:565px;
+    height:58px;
+
+    border:1px solid #d7d7d7;
+    border-radius:17px;
+
+    padding:0 20px;
+}
+
+.newsletter-form button{
+
+    width:180px;
+    height:58px;
+
+    border:none;
+
+    background:#0b1f3f;
+    color:#fff;
+
+    font-weight:700;
+
+    border-radius:17px;
+    position: absolute;
+    right: 0;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer{
+
+    background:#1f385c;
+
+    color:#fff;
+
+    padding:
+    100px 0 80px;
+}
+
+.footer-logo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.footer-logo img{
+
+    max-width:420px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:40px;
+}
+
+.footer-title,
+.footer-column h3{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.footer-title{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border:none;
+
+    background:none;
+
+    color:#fff;
+
+    cursor:pointer;
+}
+
+.footer-links{
+
+    list-style:none;
+}
+
+.footer-links li{
+
+    margin-bottom:10px;
+}
+
+.footer-links a{
+
+    color:#fff;
+}
+
+.footer-divider{
+
+    height:1px;
+
+    background:
+    rgba(255,255,255,.3);
+
+    margin:
+    60px 0;
+}
+
+.footer-disclaimer{
+
+    max-width:1200px;
+
+    line-height:1.8;
+}
+
+.copyright{
+
+    margin-top:35px;
+}
+.research-save li:last-child {
+    margin-bottom: 0;
+}
+img.arrow-down-img {
+    width: 15px;
+}
+
+/* shop page */
+.shg-page {
+    max-width: var(--shg-max-width);
+    margin: 0 auto;
+    padding: 0 15px;
+    background: var(--shg-white);
+   
+    padding-bottom: 48px;
+}
+.shg-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 18px;
+    border-bottom: 1px solid var(--shg-border);
+    gap: 20px;
+    padding-top:0;
+    padding-bottom:0;
+
+}
+.shg-topbar__ctrl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--shg-text);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+button.shg-topbar__ctrl.filter-btn {
+    padding: 10px;
+    border: 2px solid #AEB5C4;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 220px;
+    justify-content: space-between;
+    height:50px;
+    font-weight:normal;
+    font-size:16px;
+}
+button.shg-topbar__ctrl.filter-btn.filter-btn-left{
+    background-color:#122133;
+    color:#fff;
+}
+.filter-left, .sort-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+img.filter-arrow {
+    width: 18px;
+}
+.shg-topbar__search {
+    flex: 1;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 2px solid var(--shg-border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    height:50px;
+}
+.shg-topbar__search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    
+    font-size: 16px;
+    color: var(--shg-text);
+    outline: none;
+}
+.filter-icon {
+    width: 24px;
+}
+img.search-icon-top {
+    width: 23px;
+}
+img.sort-icon-top {
+    width: 18px;
+}
+img.cart-img {
+    width: 22px;
+}
+.np-container {
+    width: 100%;
+    max-width: 1640px;
+    padding: 0 15px;
+    margin-top:60px;
+   
+}
+.np-stats__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    align-items: center;
+   
+    margin-top: 60px;
+    padding-top:60px;
+    padding-bottom:60px;
+
+   
+}
+.np-stats {
+    background: #8EADE2;
+}
+.np-stats__item {
+    display: flex;
+    gap: 20px;
+    color: #fff;
+    justify-content: center;
+}
+.np-stats__inner.np-fade-up.np-visible .np-stats__item:nth-child(2) {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+/* ===================================
+   Tablet
+=================================== */
+
+@media(min-width:1200px){
+    .transparency-wrapper{
+        position:relative;
+    }
+    .transparency-logo{
+        /* position: absolute; */
+            width: 649px;
+            right: 0;
+            bottom: -51px;
+            right: 0;
+    }
+    .transparency-content p {
+    padding-right: 50px;
+    }
+    .transparency-section-bg {
+        /* background-image: url(../images/xxl-logo.png); */
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom center;
+    }
+}
+
+@media (max-width:1199px){
+
+    .container{
+        padding:0 15px;
+    }
+
+    .desktop-nav{
+        display:none;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+    .hero-left h1{
+        font-size:52px;
+    }
+
+    .hero-left p{
+        font-size:20px;
+    }
+
+    .research-section h2{
+        font-size:46px;
+    }
+    .section-heading h2{
+        font-size:48px;
+    }
+
+    .compound-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-top{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:40px;
+    }
+
+    .why-logo{
+        text-align:center;
+    }
+
+    .why-logo img{
+        margin:auto;
+    }
+
+    .why-content h2{
+        font-size:48px;
+    }
+
+    .why-features{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .research-layout{
+        grid-template-columns:240px 1fr;
+    }
+
+    .product-slider,.bottom-categories{
+        /* grid-template-columns:repeat(2,1fr); */
+        grid-template-columns:240px 240px;
+
+    }
+
+    .research-header h2{
+        font-size:42px;
+    }
+}
+
+/* ===================================
+   Mobile
+=================================== */
+@media (min-width:768px){
+    .arrow-down-img{
+        display:none;
+    }
+}
+@media (max-width:767px){
+
+    .container{
+        padding:0 15px;
+    }
+
+    .header-wrapper{
+        height:115px;
+    }
+
+    .logo img{
+        width:120px;
+    }
+
+    .header-icons{
+        gap:14px;
+    }
+
+    .header-icons a{
+        width:22px;
+        height:22px;
+    }
+
+    .hero-section{
+       
+        align-items:flex-start;
+        padding-top:45px;
+        background: url(../images/hero-mobile.jpg) center center / cover no-repeat;
+        padding-bottom: 80%;
+    }
+
+    .hero-left{
+        max-width:100%;
+    }
+
+    .hero-left h1{
+        font-size:34px;
+        line-height:1.15;
+        margin-bottom:28px;
+    }
+
+    .hero-left p{
+        font-size:18px;
+        line-height:1.6;
+    }
+
+    .primary-btn{
+        width:100%;
+        max-width:330px;
+        height:54px;
+        font-size:20px;
+    }
+
+    .research-section{
+        padding:70px 25px;
+    }
+
+    .research-section h2{
+        font-size:35px;
+    }
+
+    .research-section p{
+        font-size:18px;
+    }
+
+    .usage-card{
+        flex-direction:column;
+        padding:30px 20px;
+    }
+
+    .usage-content{
+        font-size:15px;
+        line-height:1.7;
+    }
+    .popular-compounds-section{
+        padding:50px 0;
+    }
+
+    .section-heading{
+        margin-bottom:40px;
+    }
+
+    .section-heading h2{
+        font-size:32px;
+        margin-bottom:16px;
+    }
+
+    .section-heading p{
+        font-size:18px;
+    }
+
+    .compound-grid{
+        grid-template-columns:1fr;
+        max-width:420px;
+        gap:30px;
+    }
+
+    .compound-card-body h3{
+        font-size:24px;
+    }
+
+    .compound-price strong{
+        font-size:34px;
+    }
+
+    .why-choose-section{
+        padding:70px 0;
+    }
+
+    .why-top{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .why-logo{
+        text-align:center;
+    }
+
+    .why-logo img{
+        max-width:280px;
+        margin:auto;
+    }
+
+    .why-content{
+        text-align:left;
+    }
+
+    .why-content h2{
+        font-size:32px;
+        margin-bottom:20px;
+    }
+
+    .why-content p{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+    .why-features{
+        margin-top:50px;
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .feature-card h3{
+        font-size:25px;
+    }
+
+    .feature-card p{
+        font-size:18px;
+    }
+    .research-categories-section{
+        padding:70px 0;
+    }
+
+    .research-header{
+        margin-bottom:35px;
+    }
+
+    .research-header h2{
+        font-size:34px;
+        line-height:1.2;
+    }
+
+    .research-header p{
+        font-size:15px;
+    }
+
+    .research-filters{
+        flex-direction:column;
+        gap:25px;
+        margin-bottom:40px;
+    }
+
+    .research-filter-right{
+        width:100%;
+    }
+
+    .filter-buttons{
+        justify-content:center;
+    }
+
+    .filter-btn{
+        min-width:auto;
+        width:140px;
+        font-size:12px;
+    }
+
+    .research-layout{
+        display:block;
+    }
+
+    .research-sidebar{
+        display:none;
+    }
+
+    .research-group{
+        margin-bottom:50px;
+    }
+
+    .research-group h2{
+        text-align:center;
+        font-size:32px;
+        margin-bottom:20px;
+    }
+
+    .product-slider{
+        display:block;
+    }
+
+    .bottom-categories{
+        display:block;
+    }
+
+    .bottom-categories .research-group{
+        margin-bottom:50px;
+    }
+
+    .compound-card{
+        max-width:280px;
+        margin:0 auto;
+    }
+
+    .slick-prev-custom{
+        left:-8px;
+    }
+
+    .slick-next-custom{
+        right:-8px;
+    }
+     .research-cta{
+        display:none;
+    }
+
+    .transparency-wrapper{
+        display:block;
+    }
+
+    .transparency-content{
+        text-align:center;
+    }
+
+    .transparency-content h2{
+        font-size:42px;
+    }
+
+    .transparency-content p{
+        font-size:18px;
+    }
+
+    .transparency-logo{
+        margin-top:50px;
+    }
+
+    .newsletter-card{
+
+        position:relative;
+        left:auto;
+        bottom:auto;
+
+        transform:none;
+
+        width:100%;
+
+        margin-top:40px;
+
+        padding:35px 25px;
+    }
+
+    .newsletter-card h2{
+        font-size:34px;
+    }
+
+    .newsletter-form{
+        flex-direction:row;
+    }
+
+    .newsletter-form input{
+        width:100%;
+    }
+
+    .site-footer{
+        padding:70px 0;
+    }
+
+    .footer-grid{
+        display:block;
+    }
+
+    .footer-column{
+        margin-bottom:20px;
+    }
+
+    .footer-logo img{
+        max-width:320px;
+    }
+
+    .footer-title{
+        border-bottom:1px solid rgba(255,255,255,.3);
+        padding-bottom:15px;
+    }
+    .transparency-section{
+        padding: 90px 0 90px;
+    }
+        .transparency-section {
+        background-image: url(../images/xxl-logo.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom center;
+    }
+    .transparency-logo{
+        display:none;
+    }
+    .np-stats__inner{
+        grid-template-columns: repeat(1, 100%);
+    }
+    .np-stats__inner.np-fade-up.np-visible .np-stats__item:nth-child(2){
+        border-left: none;
+        border-right: none;
+        margin-top:30px;
+        margin-bottom:30px;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+    }
+    .np-stats__icon {
+        width: 15%;
+    }
+    .np-stats__label {
+    width: 50%;
+    }
+}
+
+@media (max-width:640px){
+        .shg-topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px 0 12px;
+        border-bottom: 1px solid var(--shg-border);
+    }
+        .shg-topbar__search {
+        order: -1;
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 10px 14px;
+    }
+    button.shg-topbar__ctrl.filter-btn{
+        max-width:48%;
+    }
+}
+
+
+
+/* for animations */
+/* ============================================================
+   animations.css
+   Animations & hover effects — companion to index.css
+   Import AFTER index.css:
+   <link rel="stylesheet" href="animations.css">
+============================================================ */
+
+
+/* ============================================================
+   1. KEYFRAME DEFINITIONS
+============================================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-32px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes subtlePulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.04); }
+}
+
+@keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    40%       { transform: translateY(-6px); }
+    60%       { transform: translateY(-3px); }
+}
+
+@keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+
+/* ============================================================
+   2. ANNOUNCEMENT BAR
+   — subtle text shimmer to draw the eye
+============================================================ */
+
+.announcement-bar {
+    background-size: 200% auto;
+    animation: slideDown 0.5s ease both;
+}
+
+
+/* ============================================================
+   3. HEADER / NAV
+============================================================ */
+
+/* Smooth underline slide on nav links */
+.desktop-nav a {
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--button-bg-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: var(--button-bg-color);
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+/* Header icon hover — lift + colour tint */
+.header-icons a {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.header-icons a:hover {
+    transform: translateY(-3px);
+    opacity: 0.75;
+}
+
+/* Hamburger lines animate to an X when open
+   (add .is-open via JS on the button element) */
+.hamburger span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ============================================================
+   4. HERO SECTION
+============================================================ */
+
+/* Staggered entrance for hero copy */
+.hero-left h1 {
+    animation: fadeInLeft 0.75s ease 0.1s both;
+}
+
+.hero-left p {
+    animation: fadeInLeft 0.75s ease 0.3s both;
+}
+
+.hero-left .primary-btn {
+    animation: fadeInUp 0.75s ease 0.5s both;
+}
+
+/* Primary button — richer hover than opacity alone */
+.primary-btn {
+    transition: background 0.3s ease, transform 0.25s ease,
+                box-shadow 0.25s ease, opacity 0.3s ease;
+}
+
+.primary-btn:hover {
+    opacity: 1;                           /* override index.css's bare opacity rule */
+    background: #2560b0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(53, 115, 196, 0.45);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   5. RESEARCH SECTION  (text block)
+============================================================ */
+
+.research-section h2,
+.research-section p {
+    animation: fadeInUp 0.7s ease 0.15s both;
+}
+
+
+/* ============================================================
+   6. USAGE CARDS
+============================================================ */
+
+.usage-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usage-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(8, 28, 57, 0.35);
+}
+
+/* Icon circle pulse on card hover */
+.usage-card:hover .usage-icon {
+    animation: subtlePulse 0.6s ease;
+}
+
+
+/* ============================================================
+   7. COMPOUND / PRODUCT CARDS
+============================================================ */
+
+.compound-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.compound-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(18, 35, 63, 0.15);
+    border-color: var(--button-bg-color);
+}
+
+/* Card image subtle zoom */
+.compound-image {
+    overflow: hidden;
+}
+
+.compound-image img {
+    transition: transform 0.45s ease;
+}
+
+.compound-card:hover .compound-image img {
+    transform: scale(1.05);
+}
+
+/* "Shop Now / Add to Cart" CTA button in card footer */
+.compound-footer a {
+    transition: background 0.3s ease, transform 0.25s ease,
+                box-shadow 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.compound-footer a:hover {
+    background: var(--button-bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(53, 115, 196, 0.4);
+    letter-spacing: 0.03em;
+}
+
+.compound-footer a:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   8. WHY CHOOSE — FEATURE CARDS
+============================================================ */
+
+.feature-card {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Icon bounce on hover */
+.feature-card:hover .feature-icon img {
+    animation: iconBounce 0.55s ease;
+}
+
+
+/* ============================================================
+   9. FILTER BUTTONS
+============================================================ */
+
+.filter-btn {
+    transition: background 0.25s ease, color 0.25s ease,
+                transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+    /* background: #12233f; */
+    /* color: #fff; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(18, 35, 63, 0.2);
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+}
+
+.filter-btn.active {
+    box-shadow: 0 4px 12px rgba(18, 35, 63, 0.25);
+}
+
+/* Sort dropdown */
+.product-filter {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-filter:focus {
+    outline: none;
+    border-color: var(--button-bg-color);
+    box-shadow: 0 0 0 3px rgba(53, 115, 196, 0.2);
+}
+
+
+/* ============================================================
+   10. SIDEBAR
+============================================================ */
+
+.sidebar-box {
+    transition: box-shadow 0.3s ease;
+}
+
+.sidebar-box:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-box .category-title {
+    transition: color 0.2s ease;
+}
+
+.sidebar-box .category-title:hover {
+    color: var(--button-bg-color);
+}
+
+.sidebar-box li {
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    cursor: pointer;
+}
+
+.sidebar-box li:hover {
+    color: var(--button-bg-color);
+    padding-left: 6px;
+}
+
+
+/* ============================================================
+   11. SLIDER ARROW BUTTONS
+============================================================ */
+
+.slick-prev-custom,
+.slick-next-custom {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.slick-prev-custom:hover {
+    color: var(--button-bg-color);
+    transform: translateY(-50%) scale(1.15);
+}
+
+.slick-next-custom:hover {
+    color: var(--button-bg-color);
+    transform: translateY(-50%) scale(1.15);
+}
+
+
+/* ============================================================
+   12. RESEARCH CTA SECTION
+============================================================ */
+
+.research-cta h2,
+.research-cta p {
+    animation: fadeInUp 0.7s ease 0.1s both;
+}
+
+.research-save li {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.research-save li:hover {
+    transform: translateX(6px);
+    color: var(--button-bg-color);
+}
+
+
+/* ============================================================
+   13. TRANSPARENCY SECTION
+============================================================ */
+
+.transparency-content h2,
+.transparency-content p {
+    animation: fadeInLeft 0.75s ease 0.15s both;
+}
+
+.transparency-logo img {
+    transition: transform 0.4s ease;
+}
+
+.transparency-logo:hover img {
+    transform: scale(1.03);
+}
+
+
+/* ============================================================
+   14. NEWSLETTER
+============================================================ */
+
+.newsletter-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.15);
+}
+
+.newsletter-form input {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--button-bg-color);
+    box-shadow: 0 0 0 3px rgba(53, 115, 196, 0.18);
+}
+
+.newsletter-form button {
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.newsletter-form button:hover {
+    background: #162f57;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(11, 31, 63, 0.35);
+}
+
+.newsletter-form button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   15. FOOTER
+============================================================ */
+
+.footer-links a {
+    position: relative;
+    display: inline-block;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #a8c4f0;
+    padding-left: 5px;
+}
+
+/* Footer logo subtle hover */
+.footer-logo img {
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover img {
+    opacity: 0.85;
+}
+
+/* Footer accordion toggle (mobile) */
+.footer-title {
+    transition: color 0.2s ease;
+}
+
+.footer-title:hover {
+    color: #a8c4f0;
+}
+
+
+/* ============================================================
+   16. SCROLL-REVEAL UTILITY
+   Add .reveal to any element, then toggle .visible via
+   IntersectionObserver in JS for entrance animations.
+============================================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children inside a reveal parent */
+.reveal-group > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-group.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
+.reveal-group.visible > *:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: none; }
+.reveal-group.visible > *:nth-child(3) { transition-delay: 0.25s; opacity: 1; transform: none; }
+.reveal-group.visible > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: none; }
+.reveal-group.visible > *:nth-child(5) { transition-delay: 0.45s; opacity: 1; transform: none; }
+.reveal-group.visible > *:nth-child(6) { transition-delay: 0.55s; opacity: 1; transform: none; }
+
+
+/* ============================================================
+   17. REDUCED-MOTION OVERRIDE
+   Respects users who prefer less animation (accessibility).
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

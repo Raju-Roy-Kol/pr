@@ -1,0 +1,286 @@
+.coa-library-page {
+  padding: 40px 0 100px;
+  background: #fff;
+}
+
+.coa-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.coa-header h1 {
+  font-family: "Lora", serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #13233f;
+  margin-bottom: 20px;
+}
+
+.coa-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* ========================= */
+
+.coa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1450px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+/* ========================= */
+
+.coa-card {
+  background: #fff;
+
+  border: 2px solid #aeb5c4;
+
+  border-radius: 22px;
+
+  padding: 35px 25px;
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.coa-card:hover {
+  transform: translateY(-4px);
+}
+
+.coa-icon {
+  width: 220px;
+  height: 220px;
+
+  margin: 0 auto 30px;
+}
+
+.coa-icon img {
+  width: 100%;
+}
+
+/* ========================= */
+
+.coa-card h2 {
+  font-family: "Lora", serif;
+
+  font-size: 26px;
+
+  color: #13233f;
+
+  margin-bottom: 25px;
+}
+
+/* ========================= */
+
+.latest-coa {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  color: #3974c8;
+
+  text-decoration: none;
+
+  margin-bottom: 25px;
+}
+
+/* ========================= */
+
+.view-coas-btn {
+  width: 100%;
+
+  height: 64px;
+
+  border: 3px solid #3974c8;
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  color: #3974c8;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+  font-size: 16px;
+}
+
+.arrow {
+  /* border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:8px solid #3974c8; */
+
+  transition: 0.3s;
+}
+.arrow img {
+  width: 20px;
+}
+
+/* ========================= */
+
+.coa-list {
+  display: none;
+
+  margin-top: 20px;
+
+  text-align: left;
+}
+
+.coa-list.active {
+  display: block;
+  list-style: none;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid #d9e4ea;
+  background: #fff;
+}
+.coa-list.active a {
+  border-bottom: 1px solid #dedede;
+  padding: 20px;
+  display: block;
+}
+
+.coa-list a {
+  display: block;
+
+  padding: 10px 0;
+
+  color: #13233f;
+
+  text-decoration: none;
+}
+
+/* ========================= */
+
+.usage-notice {
+  margin-top: 80px;
+
+  background: #071c39;
+
+  border-radius: 12px;
+
+  padding: 30px;
+
+  color: #fff;
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: flex-start;
+}
+
+.notice-icon {
+  width: 60px;
+  height: 60px;
+
+  border: 4px solid #fff;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+.notice-content strong {
+  display: block;
+
+  margin-bottom: 12px;
+}
+
+.notice-content p {
+  line-height: 1.7;
+}
+img.coa-download-icon {
+  width: 25px;
+}
+
+@media (max-width: 767px) {
+  .coa-library-page {
+    padding: 40px 0 70px;
+  }
+
+  .coa-header h1 {
+    font-size: 56px;
+  }
+
+  .coa-header p {
+    font-size: 18px;
+    max-width: 320px;
+  }
+
+  .coa-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+  .coa-card {
+    padding: 20px 12px;
+  }
+
+  .coa-icon {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 20px;
+  }
+
+  .coa-card h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .latest-coa {
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
+
+  .view-coas-btn {
+    height: 46px;
+
+    font-size: 10px;
+  }
+  .arrow img {
+    width: 10px;
+  }
+  img.coa-download-icon {
+    width: 14px;
+  }
+
+  .usage-notice {
+    flex-direction: column;
+
+    padding: 24px;
+  }
+}
